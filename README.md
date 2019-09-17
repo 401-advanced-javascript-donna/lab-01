@@ -7,10 +7,9 @@
 ### Links and Resources
 * [submission PR](https://github.com/401-advanced-javascript-donna/lab-01/pull/1)
 * [travis](https://travis-ci.com/401-advanced-javascript-donna/lab-01/jobs/236584367)
-* [front-end](https://donnalambert-lab00.herokuapp.com/)
 
 #### Documentation
-* [jsdoc](https://donnalambert-lab00.herokuapp.com/docs/)
+* [jsdoc](https://donnalambert-lab01.herokuapp.com/docs/)
 ### Modules
 #### `pos.js`
 ###### `isAlive(dead) -> boolean`

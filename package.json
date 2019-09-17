@@ -1,7 +1,7 @@
 {
   "name": "01-node-ecosystem",
   "version": "0.0.1",
-  "description": "this will be sooooo cool",
+  "description": "validator!",
   "main": "index.js",
   "directories": {
     "lib": "lib"
@@ -15,12 +15,9 @@
   },
   "author": "",
   "license": "ISC",
-  "dependencies": {
-    "dotenv": "^8.1.0",
-    "eslint": "^6.1.0",
-    "express": "^4.17.1"
-  },
+  "dependencies": {},
   "devDependencies": {
+    "eslint": "^6.1.0",
     "jest": "^24.9.0"
   }
 }
