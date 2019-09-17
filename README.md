@@ -1,6 +1,6 @@
 # LAB - Class 01
 
-## Proof of Life Server
+## Node Ecosystem
 
 ### Author: Donna Lambert
 
@@ -10,31 +10,21 @@
 
 #### Documentation
 * [jsdoc](https://donnalambert-lab01.herokuapp.com/docs/)
-### Modules
-#### `pos.js`
-###### `isAlive(dead) -> boolean`
-Return true/false to indicate how the server works
-
-### Setup
-#### `.env` requirements
-* `PORT` - 3000
-
+  
 #### Running the app
 
-**Describe what npm scripts do**
 * `npm start`
-* Endpoint: `/`
-    * Returns a boolean
-* Endpoint: `/docs`
-    * Returns JSDoc Documentation pages
+    * runs `index.js`
+* `npm run lint`
+    *   runs `eslint`
+* `npm test`
+    * runs `jest`
+* `npm run test-watch`
+    *   runs `jest` with the flags `--watchAll --verbose --coverage`
+* `npm run jsdoc`
+    * runs `jsdoc` to create doc files at `/docs/config/`
 
   
 #### Tests
-* Unit Tests: `npm test`
-* Lint Tests: `npm run lint`
-
-Incomplete Tests:
- - Need to test xyz ...
-
-#### UML
-![UML Diagram](whiteboard.jpg)
+* Unit tests: `npm test`
+* Lint tests: `npm run lint`
