@@ -1,5 +1,4 @@
 const validator = require('../lib/validator.js');
-// const CastError = require('../lib/Errors');
 
 describe('validator module', () => {
   
@@ -9,6 +8,7 @@ describe('validator module', () => {
   const obj = { x: 'y' };
   const func = () => {};
   const bool = false;
+  const date = new Date();
 
   describe('performs basic validation of', () => {
 
@@ -19,6 +19,7 @@ describe('validator module', () => {
       expect(validator.isString(obj)).toBeFalsy();
       expect(validator.isString(func)).toBeFalsy();
       expect(validator.isString(bool)).toBeFalsy();
+      expect(validator.isString(date)).toBeFalsy();
     });
 
     it('numbers', () => {
@@ -28,6 +29,7 @@ describe('validator module', () => {
       expect(validator.isNum(obj)).toBeFalsy();
       expect(validator.isNum(func)).toBeFalsy();
       expect(validator.isNum(bool)).toBeFalsy();
+      expect(validator.isNum(date)).toBeFalsy();
     });
 
     it('arrays', () => {
@@ -37,6 +39,7 @@ describe('validator module', () => {
       expect(validator.isArray(obj)).toBeFalsy();
       expect(validator.isArray(func)).toBeFalsy();
       expect(validator.isArray(bool)).toBeFalsy();
+      expect(validator.isArray(date)).toBeFalsy();
     });
 
     it('objects', () => {
@@ -46,6 +49,7 @@ describe('validator module', () => {
       expect(validator.isObj(obj)).toBeTruthy();
       expect(validator.isObj(func)).toBeFalsy();
       expect(validator.isObj(bool)).toBeFalsy();
+      expect(validator.isObj(date)).toBeTruthy();
     });
 
     it('booleans', () => {
@@ -55,6 +59,17 @@ describe('validator module', () => {
       expect(validator.isBoolean(obj)).toBeFalsy();
       expect(validator.isBoolean(func)).toBeFalsy();
       expect(validator.isBoolean(bool)).toBeTruthy();
+      expect(validator.isBoolean(date)).toBeFalsy();
+    });
+
+    it('dates', () => {
+      expect(validator.isDate(date)).toBeTruthy();
+      expect(validator.isDate(str)).toBeFalsy();
+      expect(validator.isDate(num)).toBeFalsy();
+      expect(validator.isDate(arr)).toBeFalsy();
+      expect(validator.isDate(obj)).toBeFalsy();
+      expect(validator.isDate(func)).toBeFalsy();
+      expect(validator.isDate(bool)).toBeFalsy();
     });
 
     it('functions', () => {
@@ -64,6 +79,7 @@ describe('validator module', () => {
       expect(validator.isFunc(obj)).toBeFalsy();
       expect(validator.isFunc(func)).toBeTruthy();
       expect(validator.isFunc(bool)).toBeFalsy();
+      expect(validator.isFunc(date)).toBeFalsy();
     });
   });
 
@@ -129,6 +145,10 @@ describe('validator module', () => {
       expect(validator.getValidator('function')).toBe(validator.isFunc);
     });
 
+    it('date', () => {
+      expect(validator.getValidator('date')).toBe(validator.isDate);
+    });
+
     it('array of strings', () => {
       expect(validator.getValidator('strings')).toBe(validator.isArrayOfStrings);
     });
@@ -186,6 +206,14 @@ describe('validator module', () => {
       expect(() => validator.toBoolean(arr)).toThrow(validator.CastError);
       expect(() => validator.toBoolean(obj)).toThrow(validator.CastError);
       expect(() => validator.toBoolean(date)).toThrow(validator.CastError);
+    });
+
+    it('dates', () => {
+      expect(validator.toDate(date)).toEqual(String(new Date()));
+      expect(() => validator.toDate(arr)).toThrow(validator.CastError);
+      expect(() => validator.toDate(obj)).toThrow(validator.CastError);
+      expect(() => validator.toDate(str)).toThrow(validator.CastError);
+      expect(() => validator.toDate(number)).toThrow(validator.CastError);
     });
   }); 
 });
