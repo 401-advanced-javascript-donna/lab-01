@@ -1,11 +1,11 @@
-# LAB - Class 01
+# LAB - Class 02
 
 ## Node Ecosystem
 
 ### Author: Donna Lambert
 
 ### Links and Resources
-* [submission PR](https://github.com/401-advanced-javascript-donna/lab-01/pull/1)
+* [submission PR](https://github.com/401-advanced-javascript-donna/lab-01/pull/2)
 * [travis](https://travis-ci.com/401-advanced-javascript-donna/lab-01/jobs/236584367)
 
 #### Documentation
